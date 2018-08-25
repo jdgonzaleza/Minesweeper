@@ -159,22 +159,26 @@ public class Minesweeper {
 	 * Also, in order to end the game, this method is also used to unmark a previously marked cell 
 	 * */
 	public void markCell( int row, int column) {
-
-		if(board[row][column].isMarked()) {
-			board[row][column].setMarked(false);
-			if(board[row][column].getMyNumber() == 9) {
-				markedMines--;	
-			}else {
-				incoMarks--;
+		if(board[row][column].isKnown()) {
+			System.out.println("Please try with another cell, this one is already uncovered");
+		}else {
+			if(board[row][column].isMarked()) {
+				board[row][column].setMarked(false);
+				if(board[row][column].getMyNumber() == 9) {
+					markedMines--;	
+				}else {
+					incoMarks--;
+				}
+			}else{
+				if(board[row][column].getMyNumber() == 9) {
+					markedMines++;	
+				}else {
+					incoMarks++;
+				}
+				board[row][column].setMarked(true);
 			}
-		}else{
-			if(board[row][column].getMyNumber() == 9) {
-				markedMines++;	
-			}else {
-				incoMarks++;
-			}
-			board[row][column].setMarked(true);
 		}
+		
 
 	}
 	
