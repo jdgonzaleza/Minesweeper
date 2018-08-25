@@ -7,16 +7,16 @@ public class Cell {
 	 * If the number is 0 there is no mine adjacent to the cell.
 	 * */
 	private int myNumber; 
-	
+
 	/**
 	 * Dictates whether the cell has been uncovered or not 
 	 * */
 	private boolean known;
-	
+
 	private boolean marked; 
-	
-	
-	
+
+
+
 	public Cell(int myNumber, boolean known) {
 		this.myNumber = myNumber;
 		this.known = known;
@@ -46,16 +46,16 @@ public class Cell {
 	public void setKnown(boolean pKnown) {
 		known = pKnown;
 	}
-	
+
 	public boolean isMarked() {
 		return marked;
 	}
-	
+
 	public void setMarked(boolean pMarked) {
 		marked = pMarked;
 	}
-	
-	
-	
-	
+
+
+
+
 }

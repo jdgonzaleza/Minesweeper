@@ -21,22 +21,19 @@ public class Main {
 		game = new Minesweeper(columns+1, rows+1, numMines);
 
 		String move = "";
-		String moveSplit[] = null;
-		while(! (game.getMarkedMines() == numMines)) {
-			game.paintBoard();
+		while(! (game.getMarkedMines() == numMines && game.getIncoMarks() ==0)) {
+			game.drawBoard();
 			System.out.println("Insert your move... \n");
-			
+
 			move =sc.nextLine();
-			System.out.println(move.split(" ")[2]);
-			
+
 			if(move.split(" ")[2].equals("U")) {
-				if(game.play(Integer.parseInt(move.split(" ")[0]),Integer.parseInt(move.split(" ")[1])) != -1) {
-					System.out.println("asd");
+				if(game.play(Integer.parseInt(move.split(" ")[0])-1,Integer.parseInt(move.split(" ")[1])-1) != -1) {
 				}else {
 					break;
 				}
 			}else if( move.split(" ")[2].equals("M")) {
-				game.markCell(Integer.parseInt(move.split(" ")[0]), Integer.parseInt(move.split(" ")[1]));
+				game.markCell(Integer.parseInt(move.split(" ")[0])-1, Integer.parseInt(move.split(" ")[1])-1);
 			}else {
 				System.out.println("please enter a valid command \n<Row Column U/M>");
 			}
@@ -44,8 +41,11 @@ public class Main {
 		if(game.getMarkedMines() == numMines) {
 			System.out.println("Congratulations, You've won!");
 		}else {
+			game.drawMines();
 			System.out.println("Keep Trying");
 		}
+		game.drawBoard();
+
 	}
 
 }
