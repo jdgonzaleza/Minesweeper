@@ -31,8 +31,8 @@ public class Cell {
 
 
 
-	public void setMyNumber(int myNumber) {
-		this.myNumber = myNumber;
+	public void setMyNumber(int pnum) {
+		myNumber = pnum;
 	}
 
 
@@ -43,16 +43,16 @@ public class Cell {
 
 
 
-	public void setKnown(boolean known) {
-		this.known = known;
+	public void setKnown(boolean pKnown) {
+		known = pKnown;
 	}
 	
 	public boolean isMarked() {
 		return marked;
 	}
 	
-	public void setMarked(boolean marked) {
-		this.marked = marked;
+	public void setMarked(boolean pMarked) {
+		marked = pMarked;
 	}
 	
 	
