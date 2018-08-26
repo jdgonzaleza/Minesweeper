@@ -21,11 +21,16 @@ public class Main {
 		int numMines = sc.nextInt();
 		sc.nextLine();
 		game = new Minesweeper(columns+1, rows+1, numMines);
-
+		System.out.println("\nTo make a move please follow these instructions:");
+		System.out.println("1) Introduce the cordinates separated by a blank space. Example: x-cor y-cor");
+		System.out.println("2) In the same line, introduce the type of move you'll do. U for uncover, M for marking ");
+		System.out.println("Complete example: 1 2 U  " );
+		System.out.println("Other example: 1 2 M  ");
+		System.out.println("\n");
 		String move = "";
 		while(! (game.getMarkedMines() == numMines && game.getIncoMarks() ==0)) {
 			game.drawBoard();
-			System.out.println("Insert your move... \n");
+			System.out.println("\nInsert your move... \n");
 
 			move =sc.nextLine();
 
@@ -47,6 +52,7 @@ public class Main {
 			System.out.println("Keep Trying");
 		}
 		game.drawBoard();
+		sc.close();
 
 	}
 
